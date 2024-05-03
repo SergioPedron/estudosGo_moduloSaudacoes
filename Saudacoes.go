@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 // Recebe um nome e retorna uma mensagem de saudação.  Se nome vier em branco, retorna um erro no segundo parâmetro
@@ -35,6 +36,20 @@ func OlaPessoas(nomes []string) (map[string]string, error) {
 	}
 	// após ler os nomes, retornamos um map com o par de chave/valor igual a nome/mensagem
 	return mensagens, nil
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+// Recebe um nome e retorna uma mensagem de saudação com a hora e data atual
+// Para exibir no formato HH:MM:SS DD/MM/YYYY deve-se utilizar Format("15:04:05 de 02-01-2006")
+// Isso ocorre porque o formato em Go é definido com base em uma data de referência que é:  Mon Jan 2 15:04:05 -0700 MST 2006
+func OlaEm(nome string) (string, error) {
+	if nome == "" {
+		return "", errors.New("Infome um nome")
+	}
+	mensagem := fmt.Sprintf("%s. Você se conectou as %v", fmt.Sprintf(retornaMensagemAleatoria(), nome), time.Now().Format("15:04:05 de 02-01-2006"))
+	// Formato de data estranho esse do GO.
+	return mensagem, nil
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------//
