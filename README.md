@@ -1,8 +1,10 @@
-Primeiro contato com a linguagem GO
+estudosGo_moduloSaudacoes
+
+Estudos Golang - Exibe uma Saudação
+
+Primeiro contato com Golang
 
 Criação de um módulo simples para uso em outras aplicações para gerar uma saudação.
-
-Módulo: moduloSaudacoes 
 
 Funções exportadas:
 
